@@ -5,6 +5,10 @@
 #include <chrono>
 #include <memory>
 
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
 #include "database.h"
 #include "prefixspan.h"
 
