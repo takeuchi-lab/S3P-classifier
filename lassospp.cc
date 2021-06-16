@@ -11,7 +11,8 @@ double LASSOSPP::get_lambda_max(PrefixSpan &aPrefix){
 	}
 
 	tSum /= mN;
-
+        mBias = tSum;
+	
 	mR.shrink_to_fit();
 	mR.resize(mN);
 
@@ -25,7 +26,6 @@ double LASSOSPP::get_lambda_max(PrefixSpan &aPrefix){
 }
 
 void LASSOSPP::learn(PrefixSpan &aPrefix, const vector<double> &aLambdas, const vector<uint> &aOptions){
-
 	if(aOptions.empty()){
 		cout << "error:lasso.learn option size is incorrect." << '\n';
 		exit(1);
